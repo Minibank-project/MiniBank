@@ -18,7 +18,7 @@ All task branches start from the latest `develop`. Pull requests target `develop
 Each developer clones the repository once:
 
 ```bash
-git clone https://github.com/Dalentin1/MiniBank.git
+git clone https://github.com/Minibank-project/MiniBank.git
 cd MiniBank
 ```
 
