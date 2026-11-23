@@ -1,20 +1,19 @@
-from banking.accounts import Account
-
-
-"""MiniBank command-line entry point.
-
-The application flow will be implemented after the account and transaction
-interfaces have been agreed by the team.
-"""
+from banking.accounts import AccountManager
 
 
 def main():
-    """Run MiniBank once the application flow is implemented."""
-    user = Account()
-
-    print(user.accounts)
-
+  bank = AccountManager()
+  
+  name = input("Enter your full name: ")
+  pin = input("Create your PIN: ")
+  
+  account = bank.create_account(name, pin)
+  
+  print("\nAccount created successfully!")
+  print(f"Name: {account.name}")
+  print(f"Account number: {account.account_number}")
+  print(f"Balance: ₦{account.balance}")
 
 
 if __name__ == "__main__":
-    main()
+  main()
