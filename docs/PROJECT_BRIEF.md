@@ -68,6 +68,20 @@ Suggested public operations (names may be adjusted by agreement):
 - `withdraw(account, amount)`
 - `get_history(account_number)`
 
+## 4.1 Agreed transaction/account interface
+
+The team has agreed on a small interface between the two developer-owned modules:
+
+- The account-management module owns the real account object and its balance.
+- Transaction operations receive an existing account object exposing `account_number: str` and a writable `balance: Decimal`. The transaction module describes this dependency with an `AccountLike` protocol; it does not create or store a second account balance.
+- `TransactionService` provides `deposit(account, amount)`, `withdraw(account, amount)`, and `get_history(account_number)`.
+- `TransactionHistory` stores successful immutable `Transaction` records, grouped by account number.
+- Each transaction records a UUID identifier, account number, `deposit` or `withdrawal` type, positive finite `Decimal` amount, timezone-aware timestamp, and resulting balance.
+- Validation happens before the account balance or history is changed. Failed transactions must leave both unchanged.
+- The first implementation uses in-memory history. Persistent storage is out of scope.
+
+Part B is tested independently with a lightweight test account that matches the agreed interface. During integration, the test double will be replaced or supplemented with the real account class from Part A.
+
 ## 5. Out of scope for version 1
 
 The following are not part of the initial release:
