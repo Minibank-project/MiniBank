@@ -1,19 +1,30 @@
 ## Summary
 
-<!-- Briefly explain what this pull request does. -->
+<!-- Briefly explain what this pull request delivers. -->
 
 ## Related task
 
 <!-- Link the issue or describe the agreed task. -->
 
+## Implementation steps
+
+<!-- Explain the steps taken to implement this change, in order. Include important design decisions. -->
+
+1.
+2.
+3.
+
+## Connection to the other developer's work
+
+- **Interface/dependency expected:**
+- **What this PR provides:**
+- **What it expects from the other module:**
+- **Integration status:** <!-- Tested independently / integrated with the other module -->
+
 ## Changes made
 
-- 
-- 
-
-## Implementation details
-
-<!-- Explain important decisions, module boundaries, or behavior changes. -->
+-
+-
 
 ## Testing
 
@@ -33,7 +44,7 @@
 
 ## Reviewer focus
 
-<!-- Point the reviewer to areas that deserve particular attention. -->
+<!-- Tell the reviewer what to inspect, especially module boundaries and integration assumptions. -->
 
 ## Author checklist
 
